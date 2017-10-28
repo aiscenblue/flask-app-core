@@ -26,7 +26,7 @@ This points your app root directory __file__ represents your app main filename
 where it will be used for internal pointer to Flask library
 ```
 
-## Configuration
+## Advance Configuration
 
 ```
 from path.to.your.config.class import DevelopmentConfig
