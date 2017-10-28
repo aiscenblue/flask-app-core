@@ -1,8 +1,9 @@
 from distutils.core import setup
+from flask_app_core import __version__
 
 setup(
     name='flask-app-core',
-    version='1.0.3',
+    version=__version__,
     description='Flask app core',
     author='Jeffrey Marvin Forones',
     author_email='aiscenblue@gmail.com',
