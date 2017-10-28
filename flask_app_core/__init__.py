@@ -1,23 +1,11 @@
 from os import path as os_path
-
-from .base_config import DevelopmentConfig as Config
+from flask import Flask
 from flask_blueprint import Core
+from .base_config import DevelopmentConfig as Config
 import inspect
 
-""" install flask """
-try:
-    from flask import Flask
-except ImportError as e:
-    from subprocess import call
-    import sys
 
-    __pip_call = "pip"
-    if sys.version_info[0] >= 3:
-        _pip_call = "pip3"
-    call([__pip_call, 'install', 'flask'])
-
-
-__version__ = '1.0.8'
+__version__ = '1.1.9'
 
 
 class Bootstrap:

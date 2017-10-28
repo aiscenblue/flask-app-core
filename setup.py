@@ -1,4 +1,5 @@
 from distutils.core import setup
+
 from flask_app_core import __version__
 
 setup(
@@ -12,7 +13,10 @@ setup(
     packages=['flask_app_core'],
     keywords=['flask', 'clask_app_core', 'flask_app_builder'],  # arbitrary keywords
     install_requires=['flask', 'flask-blueprint'],
-    entry_points=None,
+    package_data={
+        # If any package contains *.txt or *.rst files, include them:
+        'requirements': ['bin/*.txt'],
+    },
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         'Development Status :: 5 - Production/Stable',
