@@ -1,8 +1,20 @@
 from os import path as os_path
-from flask import Flask
+
 from .base_config import DevelopmentConfig as Config
 from flask_blueprint import Core
 import inspect
+
+""" install flask """
+try:
+    from flask import Flask
+except ImportError as e:
+    from subprocess import call
+    import sys
+
+    __pip_call = "pip"
+    if sys.version_info[0] >= 3:
+        _pip_call = "pip3"
+    call([__pip_call, 'install', 'flask'])
 
 
 __version__ = '1.0.8'
