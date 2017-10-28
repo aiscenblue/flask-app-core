@@ -5,7 +5,8 @@ from flask_blueprint import Core
 import inspect
 
 
-__version__ = '1.0.3'
+__version__ = '1.0.4'
+
 
 class Bootstrap:
 
