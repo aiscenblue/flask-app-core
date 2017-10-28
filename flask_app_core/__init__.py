@@ -5,9 +5,6 @@ from .base_config import DevelopmentConfig as Config
 import inspect
 
 
-__version__ = '1.1.9'
-
-
 class Bootstrap:
 
     __app = None
