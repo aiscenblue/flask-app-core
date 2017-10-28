@@ -2,6 +2,7 @@ from os import path as os_path
 from flask import Flask
 from .base_config import DevelopmentConfig as Config
 from flask_blueprint import Core
+import inspect
 
 
 class Bootstrap:
@@ -11,24 +12,42 @@ class Bootstrap:
     _config = Config
     _module_dir = ".module"
 
-    def __init__(self, import_name, main_dir, *args, **kwargs):
-        self.__root_dir = os_path.dirname(main_dir)
+    def __init__(self, import_name, app_dir, **kwargs):
+        self.__root_dir = os_path.dirname(app_dir)
         self.__app = Flask(import_name, instance_relative_config=True)
         if "config" in kwargs:
-            self._config = kwargs["config"]
+            if inspect.isclass(kwargs['config']):
+                self._config = kwargs["config"]
+            else:
+                raise ValueError("config must be a class type")
         if "module" in kwargs:
-            self._module_dir = kwargs["module"]
-
-        if len(args):
-            self.system_config(system=args[0])
+            if os_path.isdir(kwargs['module']):
+                self._module_dir = kwargs["module"]
+            else:
+                raise ValueError("module is not a directory")
+        if "environment" in kwargs:
+            self.set_environment(kwargs['environment'])
 
         self.configuration(self._config)
 
-    def system_config(self, system):
-        if len(system) > 1:
-            if '--debug' in system:
-                setattr(Config, 'DEBUG', system[2])
-        self.configuration(conf=Config)
+    """ 
+        set default as Development configuration
+        hot to create module
+            python 2
+                https://docs.python.org/2/tutorial/modules.html
+            python 3
+                https://docs.python.org/3/tutorial/modules.html
+    """
+    def set_environment(self, environment_name='development'):
+        debug_testing_conf = True
+        setattr(self._config, 'DEBUG', debug_testing_conf)
+        setattr(self._config, 'TESTING', debug_testing_conf)
+
+        """ reserved string value for environment name """
+        if environment_name == "production":
+            debug_testing_conf = False
+            setattr(self._config, 'DEBUG', debug_testing_conf)
+            setattr(self._config, 'TESTING', debug_testing_conf)
 
     def configuration(self, conf):
         """ configuration file fore core module """
