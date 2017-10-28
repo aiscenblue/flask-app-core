@@ -5,7 +5,7 @@ application core for flask-starter-kit
 `pip install flask-app-core`
 
 ## Create Starter application
-> create start.py
+> create start.py to your root directory
 
 > paste the code below
 ```
