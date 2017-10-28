@@ -37,5 +37,5 @@ class Bootstrap:
     def start(self):
         """ for blueprint registration """
         Core(app=self.__app, root_path=self._module_dir)
-        self.__app.run(host=Config.HOST, port=Config.PORT)
+        self.__app.run(host=self._config.HOST, port=self._config.PORT)
         return self.__app
