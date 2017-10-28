@@ -3,6 +3,9 @@ application core for flask-starter-kit
 
 ## Installation
 `pip install flask-app-core`
+> view on pypi
+
+> https://pypi.python.org/pypi/flask-app-core
 
 ## Create Starter application
 > create start.py to your root directory
