@@ -49,7 +49,7 @@ If no configuration file feed as parameter it will fetch the default DEVELOPMENT
 
 configuration choices: 'development' or 'production'
 ```
-> Example config class
+### Example config class
 ```
 """
     flask configuration found in http://flask.pocoo.org/docs/0.12/config/
