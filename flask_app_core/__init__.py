@@ -4,6 +4,25 @@ from flask_blueprint import Core
 from .base_config import DevelopmentConfig as Config
 import inspect
 
+"""
+    Bootstrap
+        for running flask application
+    
+    :param import_name
+        your application name
+        
+    :param app_dir
+        your main app directory
+            example: the start.py in https://github.com/aiscenblue/flask-starter-kit
+    
+    HOW TO:
+        bootstrap = Bootstrap(import_name=__name__, app_dir=__file__, config=DevelopmentConfig, environment='development')
+        bootstrap.start()
+        
+        LINK: https://github.com/aiscenblue/flask-app-core
+    
+"""
+
 
 class Bootstrap:
 
