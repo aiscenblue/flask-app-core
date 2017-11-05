@@ -44,6 +44,25 @@ bootstrap = Bootstrap(
     
 bootstrap.start()
 ```
+#### Create a folder named "module" in your application roon directory before running the application
+```
+ It states that all your routing config and API modules are located on the "module directory"
+```
+
+#### Custom module configuration
+
+```
+if __name__ == "__main__":
+bootstrap = Bootstrap(
+    import_name=__name__, 
+    app_dir=__file__, 
+    module="to/module/directory"
+    config=DevelopmentConfig, 
+    environment='development')
+    
+bootstrap.start()
+```
+
 ```
 If no configuration file feed as parameter it will fetch the default DEVELOPMENT 
 
@@ -77,3 +96,5 @@ class TestingConfig(BaseConfig):
     TESTING = True
 
 ```
+
+#### If set to production the debug will be over written to False
