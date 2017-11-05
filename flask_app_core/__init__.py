@@ -34,7 +34,7 @@ class Bootstrap:
     static_path = None
     static_url_path = None
     static_folder = "assets"
-    template_folder = "templates"
+    template_folder = _module_dir
     instance_path = None
     root_path = None
 
