@@ -98,3 +98,20 @@ class TestingConfig(BaseConfig):
 ```
 
 #### If set to production the debug will be over written to False
+
+# Module Views
+
+```
+make_response(render_template('index/view.html', title="Flask Starter Kit!"))
+```
+
+#### path
+`path starts from your root module directory`
+
+```
+~/your_module_directory
+---|/module_name
+------| view.html
+```
+`Therefore the path in the example above should be`
+`make_response(render_template('module_name/view.html', title="Flask Starter Kit!"))`
