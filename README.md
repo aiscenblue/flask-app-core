@@ -115,4 +115,5 @@ make_response(render_template('index/view.html', title="Flask Starter Kit!"))
 ```
 `Therefore the path in the example above should be`
 
+
 ```make_response(render_template('module_name/view.html', title="Flask Starter Kit!"))```
