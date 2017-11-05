@@ -33,8 +33,8 @@ class Bootstrap:
     instance_relative_config = True
     static_path = None
     static_url_path = None
-    static_folder = "static"
-    template_folder = _module_dir + "/templates"
+    static_folder = "assets"
+    template_folder = "templates"
     instance_path = None
     root_path = None
 
