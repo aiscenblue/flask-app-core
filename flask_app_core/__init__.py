@@ -30,12 +30,29 @@ class Bootstrap:
     __root_dir = None
     _config = Config
     _module_dir = "module"
+    instance_relative_config = True
+    static_path = None
+    static_url_path = None
+    static_folder = "static"
+    template_folder = _module_dir + "/templates"
+    instance_path = None
+    root_path = None
 
     def __init__(self, import_name, app_dir, **kwargs):
 
         self.__root_dir = os_path.dirname(app_dir)
 
-        self.__app = Flask(import_name, instance_relative_config=True)
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+        self.__app = Flask(import_name,
+                           instance_relative_config=self.instance_relative_config,
+                           static_path=self.static_path,
+                           static_url_path=self.static_url_path,
+                           static_folder=self.static_folder,
+                           template_folder=self.template_folder,
+                           instance_path=self.instance_path,
+                           root_path=self.root_path)
 
         if "config" in kwargs:
 
