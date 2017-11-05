@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='flask-app-core',
-    version='1.2.3',
+    version='1.2.4',
     description='Flask app core',
     author='Jeffrey Marvin Forones',
     author_email='aiscenblue@gmail.com',
