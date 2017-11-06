@@ -36,7 +36,6 @@ class Bootstrap:
     static_folder = "assets"
     template_folder = _module_dir
     instance_path = None
-    root_path = None
 
     def __init__(self, import_name, app_dir, **kwargs):
 
@@ -51,8 +50,7 @@ class Bootstrap:
                            static_url_path=self.static_url_path,
                            static_folder=self.static_folder,
                            template_folder=self.template_folder,
-                           instance_path=self.instance_path,
-                           root_path=self.root_path)
+                           instance_path=self.instance_path)
 
         if "config" in kwargs:
 
