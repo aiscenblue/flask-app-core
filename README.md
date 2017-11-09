@@ -5,7 +5,7 @@ application core for flask-starter-kit
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://badge.fury.io/py/flask-app-core)
 [![PyPI version](https://badge.fury.io/py/flask-app-core.svg)](https://badge.fury.io/py/flask-app-core)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://github.com/aiscenblue/flask-app-core/blob/master/LICENSE)
-[![dependencies Status](https://david-dm.org/boennemann/badges/status.svg)](https://david-dm.org/boennemann/badges)
+[![dependencies Status](https://david-dm.org/boennemann/badges/status.svg)](https://github.com/aiscenblue/flask-app-core)
 
 ## Installation
 `pip install flask-app-core`
