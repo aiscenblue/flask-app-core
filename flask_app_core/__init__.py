@@ -94,8 +94,8 @@ class Bootstrap:
         """ configuration file fore core module """
         self.__app.config.from_object(conf)
 
-    def start(self):
+    def start(self, **kwargs):
         """ for blueprint registration """
         Core(app=self.__app, root_paths=[self.__root_dir + '/' + self._module_dir])
-        self.__app.run(host=self._config.HOST, port=self._config.PORT)
+        self.__app.run(host=self._config.HOST, port=self._config.PORT, **kwargs)
         return self.__app
