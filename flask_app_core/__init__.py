@@ -1,4 +1,4 @@
-from os import path as os_path
+import os
 from flask import Flask
 from flask_blueprint import Core
 from .base_config import DevelopmentConfig as Config
@@ -39,14 +39,13 @@ class Bootstrap:
 
     def __init__(self, import_name, app_dir, **kwargs):
 
-        self.__root_dir = os_path.dirname(app_dir)
+        self.__root_dir = os.path.dirname(os.path.realpath(app_dir))
 
         for key, value in kwargs.items():
             setattr(self, key, value)
 
         self.__app = Flask(import_name,
                            instance_relative_config=self.instance_relative_config,
-                           static_path=self.static_path,
                            static_url_path=self.static_url_path,
                            static_folder=self.static_folder,
                            template_folder=self.template_folder,
@@ -61,7 +60,7 @@ class Bootstrap:
 
         if "module" in kwargs:
 
-            if os_path.isdir(kwargs['module']):
+            if os.path.isdir(kwargs['module']):
                 self._module_dir = kwargs["module"]
             else:
                 raise ValueError("module is not a directory")
