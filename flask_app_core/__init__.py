@@ -20,7 +20,6 @@ import inspect
         bootstrap.start()
         
         LINK: https://github.com/aiscenblue/flask-app-core
-    
 """
 
 
