@@ -28,7 +28,7 @@ class Bootstrap:
     __app = None
     __root_dir = None
     _config = Config
-    _module_dir = "module"
+    _module_dir = "modules"
     instance_relative_config = True
     static_path = None
     static_url_path = None
